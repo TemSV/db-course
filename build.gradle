@@ -1,0 +1,43 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.9'
+}
+
+group 'db.course'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+javafx {
+    version = '19'
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+dependencies {
+
+    implementation 'org.hibernate:hibernate-core:6.4.0.Final'
+
+    runtimeOnly 'org.postgresql:postgresql:42.2.23.jre7'
+
+
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+
+    implementation 'org.openjfx:javafx-controls:22-ea+16'
+    implementation 'org.openjfx:javafx-fxml:22-ea+16'
+
+
+    implementation 'org.mindrot:jbcrypt:0.4'
+
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.30'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
+}
